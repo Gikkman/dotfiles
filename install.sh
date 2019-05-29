@@ -37,8 +37,12 @@ GIT="https://github.com/gikkman/dotfiles"
 DOTFILES="$HOME/.dotfiles"
 
 # Create dotfiles directory if it doesn't already exist
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
 if [ ! -d "$DOTFILES" ]; then
-  if ! type git <& /dev/null; then
+  if ! command_exists git; then
     echo "No git installed. Aborting"
     exit -1
   fi
