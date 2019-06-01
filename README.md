@@ -4,7 +4,7 @@
 
 Check the specific requirements bellow, then run:
 ```
-sh -c "`curl -fsSL https://raw.githubusercontent.com/Gikkman/.dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.githubusercontent.com/Gikkman/.dotfiles/master/remote-install.sh`"
 ```
 
 ### OSX
