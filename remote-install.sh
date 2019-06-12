@@ -6,12 +6,10 @@
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 
-Installs my dotfiles. A directory is created
-at ~/.dotfiles, which will contain
-all dotfiles. 
+Installs my dotfiles. A directory is created at ~/.dotfiles, which will contain everything needed. 
 
 Files under /link will be symlinked into /~
-Files under /bin will be executable
+Files under /bin will be executable (/bin with also be symlinked to ~/.bin)
 Files under /source will be sourced when a shell is created
 
 Github repo:
@@ -19,6 +17,7 @@ https://github.com/Gikkman/.dotfiles
 
 Copyright (c) 2019 Gikkman
 Licensed under the MIT license.
+
 HELP
 
 exit; fi
@@ -28,16 +27,14 @@ exit; fi
 ###########################################
 
 # Make sure git exists
-command_exists () {
-  type "$1" &> /dev/null ;
-}
-if ! command_exists git; then
+if ! type git >/dev/null 2>&1; then
   echo "No git installed. Aborting"
   exit -1
 fi
 
 # Ask for admin password upfront
 # Then keep alive the existing `sudo` timestamp until the script has finished
+echo "This install script will need admin permissions"
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
@@ -53,4 +50,4 @@ else
 fi
 
 # Execute the local install/update
-sh -c "$DOTDIR/update.sh"
+sh "$DOTDIR/update.sh"
