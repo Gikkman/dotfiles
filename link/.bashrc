@@ -1,6 +1,7 @@
 export DOTDIR="${HOME}/.dotfiles"
 export PATH="${DOTDIR}/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
+export CLICOLOR=1
 
 # Source all files from source
 for file in "$(find $DOTDIR/source -maxdepth 1 -name '*.sh' -print -quit)"; 
@@ -30,4 +31,5 @@ export PS1;
 
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
-export LSCOLORS=dxfxcxdxbxegedabagacad
+export LS_COLORS='di=1;33:ln=1;35:ex=0;31:pi=0;47:so=0;47:bd=0;47;cd=0;47:or=0;44:mi=0;44'
+

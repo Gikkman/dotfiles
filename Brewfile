@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/coreutils"
 brew "maven"
 brew "node"
 cask "discord"
