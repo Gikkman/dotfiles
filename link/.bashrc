@@ -4,8 +4,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export CLICOLOR=1
 
 # Source all files from source
-for file in "$(find $DOTDIR/source -maxdepth 1 -name '*.sh' -print -quit)"; 
-  do source $file; 
+for file in `find $DOTDIR/source -depth 1 -type f`; do 
+  source ${file}; 
 done
 
 # Terminal style
