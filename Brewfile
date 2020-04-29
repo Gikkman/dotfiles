@@ -11,4 +11,4 @@ cask "jetbrains-toolbox"
 cask "shiftit"
 cask "visual-studio-code"
 cask "db-browser-for-sqlite"
-
+cask "keepassxc"
