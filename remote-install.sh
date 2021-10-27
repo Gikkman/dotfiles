@@ -50,4 +50,5 @@ else
 fi
 
 # Execute the local install/update
+echo "Running installer at $DOTDIR/update.sh"
 sh "$DOTDIR/update.sh"
