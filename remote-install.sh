@@ -4,7 +4,7 @@
 # HELP SECTION
 ###########################################
 
-if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
+if [ "$1" == "-h" -o "$1" == "--help" ]; then cat <<HELP
 
 Installs my dotfiles. A directory is created at ~/.dotfiles, which will contain everything needed. 
 
