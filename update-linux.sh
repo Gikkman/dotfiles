@@ -1,5 +1,9 @@
 #! /usr/bin/env bash
 
+apt update 
+apt upgrade
+
+# Install zsh and oh-my-zsh
 which zsh > /dev/null
 if [ "$?" != "0" ]; then
     echo Installing zsh
@@ -10,4 +14,6 @@ else
     echo Detected installation of zsh
 fi
 
-sh $DOTDIR/util/install-podman.sh
+# Install Node17 and npm
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs

@@ -2,12 +2,7 @@
 
 DOTDIR="$HOME/.dotfiles"
 
-# Create symbolic links
-for DOTFILE in `find $DOTDIR/link`
-do
-  [ -f "$DOTFILE" ] && ln -s "$DOTFILE" "$HOME"
-done
-
+# Run OS dependent installs
 OS=$(uname)
 echo Detected OS $OS
 case $OS in
@@ -23,3 +18,12 @@ case $OS in
     echo "Unknow OS $OS"
   ;;
 esac
+
+# Create symbolic links
+for DOTFILE in `find $DOTDIR/link`
+do
+  if [ -f "$DOTFILE" ]; then
+    rm $DOTFILE
+  fi
+  ln -s "$DOTFILE" "$HOME"
+done
