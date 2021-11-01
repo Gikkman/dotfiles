@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
 which zsh > /dev/null
 if [ "$?" != "0" ]; then
@@ -9,3 +9,5 @@ if [ "$?" != "0" ]; then
 else
     echo Detected installation of zsh
 fi
+
+sh $DOTDIR/util/install-podman.sh

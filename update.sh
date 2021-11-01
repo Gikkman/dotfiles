@@ -1,9 +1,11 @@
+#! /usr/bin/env bash
+
 DOTDIR="$HOME/.dotfiles"
 
 # Create symbolic links
 for DOTFILE in `find $DOTDIR/link`
 do
-  [ -f "$DOTFILE" ] && ln -s “$DOTFILE” "$HOME"
+  [ -f "$DOTFILE" ] && ln -s "$DOTFILE" "$HOME"
 done
 
 OS=$(uname)

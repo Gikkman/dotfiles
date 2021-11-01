@@ -1,6 +1,4 @@
-alias ..='cd ..'
-alias ....='cd .. && cd ..'
-
+export DOTDIR="$HOME/.dotfiles"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -102,3 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+for f in $DOTDIR/source/*; do
+    source $f
+done
