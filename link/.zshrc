@@ -91,7 +91,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
+export GROUP_ID=$(id -g)
+export USER_ID=$(id -u)
 for f in $DOTDIR/source/*; do
     source $f
 done

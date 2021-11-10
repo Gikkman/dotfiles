@@ -20,10 +20,10 @@ case $OS in
 esac
 
 # Create symbolic links
-for DOTFILE in `find $DOTDIR/link`
+for LINKFILE in `find $DOTDIR/link`
 do
-  if [ -f "$DOTFILE" ]; then
-    rm $DOTFILE
+  if [ -f "$LINKFILE" ]; then
+    rm $LINKFILE
   fi
-  ln -s "$DOTFILE" "$HOME"
+  ln -s "$LINKFILE" "$HOME"
 done

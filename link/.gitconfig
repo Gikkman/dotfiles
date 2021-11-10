@@ -1,3 +1,5 @@
 [user]
-	name = Gikkman
-	email = ksr.jonasson@gmail.com
+	name = gikkman
+	email = gikk@gikkman.com
+[credential]
+	helper = store
