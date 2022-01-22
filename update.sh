@@ -27,3 +27,5 @@ do
   fi
   ln -s "$LINKFILE" "$HOME"
 done
+
+ln -s $DOTDIR/custom/gikk.zsh-theme $ZSH/custom/themes/gikk.zsh-theme

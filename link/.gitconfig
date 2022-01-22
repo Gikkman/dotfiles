@@ -3,3 +3,5 @@
 	email = gikk@gikkman.com
 [credential]
 	helper = store
+[core]
+	editor = vim

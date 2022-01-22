@@ -20,3 +20,6 @@ sudo apt-get install -y nodejs
 
 # Set git to use credentials store
 git config --global credential.helper store
+
+# Install nice-to-haves
+sudo apt-get install -y unzip
