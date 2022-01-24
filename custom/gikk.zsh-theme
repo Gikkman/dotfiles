@@ -13,7 +13,7 @@ function wrap_git_prompt_status {
 }
 
 PROMPT='
-$FG[007][%D{%H:%M:%S}] %{$fg_bold[cyan]%}%n%{$reset_color%}@%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)$(wrap_git_prompt_status)
+$FG[244][%D{%H:%M:%S}] %{$fg_bold[cyan]%}%n%{$reset_color%}@%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)$(wrap_git_prompt_status)
 $(virtualenv_info)$FX[reset]$(prompt_char) '
 
 # Default values for the appearance of the prompt.
