@@ -75,6 +75,8 @@ ZSH_THEME="gikk"
 
 plugins=(
     z
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
 

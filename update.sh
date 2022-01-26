@@ -19,6 +19,9 @@ case $OS in
   ;;
 esac
 
+# Run generic installs
+sh "$DOTDIR/update-generic.sh"
+
 # Create symbolic links
 for LINKFILE in `find $DOTDIR/link`
 do
@@ -27,5 +30,4 @@ do
   fi
   ln -s "$LINKFILE" "$HOME"
 done
-
-ln -s $DOTDIR/custom/gikk.zsh-theme $ZSH/custom/themes/gikk.zsh-theme
+ln -s $DOTDIR/custom/gikk.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/gikk.zsh-theme

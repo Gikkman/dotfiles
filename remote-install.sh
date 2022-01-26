@@ -11,6 +11,7 @@ Installs my dotfiles. A directory is created at ~/.dotfiles, which will contain 
 Files under /link will be symlinked into /~
 Files under /bin will be executable (/bin with also be symlinked to ~/.bin)
 Files under /source will be sourced when a shell is created
+Files under /custom will have varying usages
 
 Github repo:
 https://github.com/Gikkman/.dotfiles
