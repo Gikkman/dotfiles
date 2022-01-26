@@ -13,27 +13,27 @@ function wrap_git_prompt_status {
 }
 
 PROMPT='
-$FG[244][%D{%H:%M:%S}] %{$fg_bold[cyan]%}%n%{$reset_color%}@%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)$(wrap_git_prompt_status)
+$FG[244][%D{%H:%M:%S}] $FG[038]$FX[bold]%n$FX[reset]@$FG[034]$FX[bold]%~$FX[reset]$(git_prompt_info)$(wrap_git_prompt_status)
 $(virtualenv_info)$FX[reset]$(prompt_char) '
 
 # Default values for the appearance of the prompt.
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%} on %{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_PREFIX="$FX[reset] on $FG[136]"
+ZSH_THEME_GIT_PROMPT_SUFFIX="$FX[reset] "
 
 ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}✔️"
+ZSH_THEME_GIT_PROMPT_CLEAN=" $FG[034]$FX[bold]✔️"
 
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[green]%}▲"
-ZSH_THEME_GIT_PROMPT_BEHIND="%%{$fg[blue]%}▼"
-ZSH_THEME_GIT_PROMPT_DIVERGED="%{$fg_bold[red]%}⚑"
+ZSH_THEME_GIT_PROMPT_AHEAD="$FG[034]▲"
+ZSH_THEME_GIT_PROMPT_BEHIND="$FG[027]▼"
+ZSH_THEME_GIT_PROMPT_DIVERGED="$FG[160]⚑"
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[green]%}+"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}Δ"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%}-"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[white]%}❯"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}="
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[magenta]%}?"
-ZSH_THEME_GIT_PROMPT_STASHED="%{$fg_bold[yellow]%}$"
+ZSH_THEME_GIT_PROMPT_ADDED="$FG[034]$FX[bold]+$FX[reset]"
+ZSH_THEME_GIT_PROMPT_MODIFIED="$FG[027]$FX[bold]Δ$FX[reset]"
+ZSH_THEME_GIT_PROMPT_DELETED="$FG[160]$FX[bold]-$FX[reset]"
+ZSH_THEME_GIT_PROMPT_RENAMED="$FG[255]❯"
+ZSH_THEME_GIT_PROMPT_UNMERGED="$FG[136]="
+ZSH_THEME_GIT_PROMPT_UNTRACKED="$FG[038]$FX[bold]?$FX[reset]"
+ZSH_THEME_GIT_PROMPT_STASHED="$FG[136]$"
 
 # display exitcode on the right when >0
 return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
