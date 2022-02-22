@@ -1,10 +1,8 @@
-#! /usr/bin/env bash
-
 ###########################################
 # HELP SECTION
 ###########################################
 
-if "$1" == "-h" -o "$1" == "--help"; then cat <<HELP
+if test "$1" == "-h" -o "$1" == "--help"; then cat <<HELP
 
 Installs my dotfiles. A directory is created at ~/.dotfiles, which will contain everything needed. 
 
@@ -41,7 +39,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Create dotfiles directory if it doesn't already exist
 GIT="https://github.com/gikkman/dotfiles"
-DOTDIR="$HOME/.dotfiles"
+export DOTDIR="$HOME/.dotfiles"
 if [ ! -d "$DOTDIR" ]; then
   echo "Cloning down dotfiles"
   mkdir -p "$DOTDIR"

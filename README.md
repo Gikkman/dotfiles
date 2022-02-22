@@ -14,6 +14,5 @@ On a fresh OSX install, begin with running:
 This will install `git` and `make` which are needed to be able to run the script
 
 ### *nix
-(TODO)
-
+No additional actions needed
 

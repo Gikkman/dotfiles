@@ -1,7 +1,3 @@
-#! /usr/bin/env bash
-
-DOTDIR="$HOME/.dotfiles"
-
 # Run OS dependent installs
 OS=$(uname)
 echo Detected OS $OS
@@ -23,11 +19,15 @@ esac
 sh "$DOTDIR/update-generic.sh"
 
 # Create symbolic links
-for LINKFILE in `find $DOTDIR/link`
+for LINKFILE in $(find link -type f | sed "s#link/##")
 do
-  if [ -f "$LINKFILE" ]; then
-    rm $LINKFILE
+  if [ -f $HOME/$LINKFILE ]; then
+    rm $HOME/$LINKFILE
   fi
-  ln -s "$LINKFILE" "$HOME"
+  ln -s "$DOTDIR/link/$LINKFILE" "$HOME/$LINKFILE"
 done
-ln -s $DOTDIR/custom/gikk.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/gikk.zsh-theme
+
+MY_ZSH_THEME="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/gikk.zsh-theme"
+if ! [ -f $MY_ZSH_THEME ]; then 
+  ln -s $DOTDIR/custom/gikk.zsh-theme $MY_ZSH_THEME
+fi
