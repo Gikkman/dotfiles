@@ -25,7 +25,7 @@ function wrap_git_prompt_status {
 
 PROMPT='
 $FG[244][%D{%H:%M:%S}] $FG[038]$FX[bold]%n$FX[reset]@$FG[034]$FX[bold]%~$FX[reset]$(git_prompt_info)$(wrap_git_prompt_status)
-$(virtualenv_info)$FX[reset]$(prompt_char) '
+$(virtualenv_info)$FX[reset]'
 
 # Default values for the appearance of the prompt.
 ZSH_THEME_GIT_PROMPT_PREFIX="$FX[reset] on $FG[136]"
