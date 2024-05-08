@@ -11,8 +11,7 @@ else
 fi
 
 # Install Node and npm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-nvm install lts
+curl -L https://bit.ly/n-install | N_PREFIX=~/.n bash -s -- -y
 
 # Set git to use credentials store
 git config --global credential.helper store
