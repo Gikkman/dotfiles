@@ -19,7 +19,7 @@ esac
 sh "$DOTDIR/update-generic.sh"
 
 # Create symbolic links
-for LINKFILE in $(find link -type f | sed "s#link/##")
+for LINKFILE in $(find $DOTDIR/link -type f | sed "s#$DOTDIR/link/##")
 do
   if [ -f $HOME/$LINKFILE ]; then
     rm $HOME/$LINKFILE
@@ -27,7 +27,7 @@ do
   ln -s "$DOTDIR/link/$LINKFILE" "$HOME/$LINKFILE"
 done
 
-MY_ZSH_THEME="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/gikk.zsh-theme"
+MY_ZSH_THEME="$HOME/.oh-my-zsh/custom/themes/gikk.zsh-theme"
 if ! [ -f $MY_ZSH_THEME ]; then 
   ln -s $DOTDIR/custom/gikk.zsh-theme $MY_ZSH_THEME
 fi
