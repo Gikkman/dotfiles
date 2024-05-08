@@ -10,9 +10,9 @@ else
     echo Detected installation of zsh
 fi
 
-# Install Node17 and npm
-curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
-sudo apt-get install -y nodejs
+# Install Node and npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install lts
 
 # Set git to use credentials store
 git config --global credential.helper store
