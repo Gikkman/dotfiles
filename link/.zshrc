@@ -99,6 +99,8 @@ done
 #   export EDITOR='mvim'
 # fi
 
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS;
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
