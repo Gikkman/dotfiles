@@ -16,5 +16,8 @@ sudo apt-get install -y unzip make
 # Install Node and npm
 curl -L https://bit.ly/n-install | N_PREFIX=~/.n bash -s -- -y
 
+# Install uv (for python)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Set git to use credentials store
 git config --global credential.helper store
